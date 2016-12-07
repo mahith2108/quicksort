@@ -29,7 +29,8 @@ public class Quicksort {
          //print();
          //bubbleSort();
          //print();
-         shellsort();
+         // shellsort();
+          selectionSort();
          print();
     }
     
@@ -103,7 +104,7 @@ public class Quicksort {
                 if(a[j-i]<a[i]){
                
                   swap(i,j-i);
-                  //System.out.print(i + " "+(j-i));
+                  System.out.print(i + " "+(j-i));
                }
               
            }
@@ -111,5 +112,29 @@ public class Quicksort {
               
         bubbleSort();
     }  
+    
+    public static void selectionSort(){
+         
+            for(int i=0;i<last;i++){
+            int k=i;
+                for(int j=i+1;j<last;j++){
+               
+                    if(a[j]<a[i]){
+                       
+                       if(a[j]<a[k]) 
+                          k=j;
+                          System.out.println(i +" "+ k);
+                    } 
+                                
+               }
+                
+                if(k!=i){
+                
+                  swap(k,i);
+                }
+               
+           }
+    
+    }
     
 }
