@@ -21,15 +21,16 @@ public class Quicksort {
     public static void main(String[] args) {
         // TODO code application logic here
     
-         int[] k={-1,1,-2,6,-5,3,-15};
+         int[] k={2,1,-12,-11};
          a=k;
          last=k.length;
+         //print();
+         //quicksort(0,last);
+         //print();
+         //bubbleSort();
+         //print();
+         shellsort();
          print();
-         quicksort(0,last);
-         print();
-         bubbleSort();
-         print();
-         
     }
     
     public static void quicksort(int left,int right){
@@ -51,9 +52,7 @@ public class Quicksort {
             }    
                 swap(left,pivot_index);
                 quicksort(left,pivot_index-1);
-                quicksort(pivot_index+1,right);
-           
-                  
+                quicksort(pivot_index+1,right);           
         }
     
     }
@@ -91,4 +90,26 @@ public class Quicksort {
         }
     
     }
+    
+    public static void shellsort(){
+        int j=last-1;
+            for(int i=0;i<last;i++){
+               
+                if((j-i)<=i){
+               
+                   break;
+               }
+                   
+                if(a[j-i]<a[i]){
+               
+                  swap(i,j-i);
+                  //System.out.print(i + " "+(j-i));
+               }
+              
+           }
+       
+              
+        bubbleSort();
+    }  
+    
 }
